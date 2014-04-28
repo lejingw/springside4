@@ -7,6 +7,7 @@
 	<name>Springside :: Project</name>
 	<packaging>pom</packaging>
 
+
 	<description>SpringSide is a Spring Framework based JavaEE application reference architecture. </description>
 	<url>http://www.github.com/springside/springside4</url>
 	<inceptionYear>2006-2012</inceptionYear>
