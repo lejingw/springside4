@@ -15,6 +15,7 @@
 				url:remoteUrl + "/web/mashup", 
 				dataType:"jsonp"})
 				.done(function(data) {
+					//alert(data);
 					$('#mashupContent').html(data.content);
 					$('#mashupContent').show();
 				});

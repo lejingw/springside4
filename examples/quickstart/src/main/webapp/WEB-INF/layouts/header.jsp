@@ -8,7 +8,8 @@
 	    <shiro:user>
 			<div class="btn-group pull-right">
 				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-					<i class="icon-user"></i> <shiro:principal property="name"/>
+					<i class="icon-user"></i>
+					<shiro:principal property="name"/>
 					<span class="caret"></span>
 				</a>
 			

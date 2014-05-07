@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  * 另外简单演示了轻量级更易用的Apache HttpClient Fluent API。
  * 
  * 演示访问地址如下(contentUrl已经过URL编码):
- * remote-content?contentUrl=http%3A%2F%2Flocalhost%3A8080%2Fshowcase%2Fimages%2Flogo.jpg
+ * remote-content?contentUrl=http%3A%2F%2Flocalhost%3A8080%2Fshowcase%2Fstatic%2Fimages%2Flogo.jpg
  * 
  * @author calvin
  */

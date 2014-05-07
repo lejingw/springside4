@@ -13,4 +13,10 @@
 
 	<!-- WebService的实现Bean定义 -->
 	<bean id="accountSoapService" class="org.springside.examples.showcase.webservice.soap.AccountSoapServiceImpl" />
+	
+	
+	<jaxws:endpoint address="/soap/userservice">
+		<jaxws:implementor ref="userSoapService" />
+	</jaxws:endpoint>
+	<bean id="userSoapService" class="org.springside.examples.showcase.webservice.soap.UserSoapServiceImpl"/>
 </beans>
