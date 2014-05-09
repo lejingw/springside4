@@ -1,0 +1,31 @@
+[1mdiff --git a/examples/showcase/src/test/functional/org/springside/examples/showcase/functional/BaseSeleniumTestCase.java b/examples/showcase/src/test/functional/org/springside/examples/showcase/functional/BaseSeleniumTestCase.java[m
+[1mindex 3bf99d3..fe2c975 100644[m
+[1m--- a/examples/showcase/src/test/functional/org/springside/examples/showcase/functional/BaseSeleniumTestCase.java[m
+[1m+++ b/examples/showcase/src/test/functional/org/springside/examples/showcase/functional/BaseSeleniumTestCase.java[m
+[36m@@ -33,11 +33,11 @@[m [mpublic class BaseSeleniumTestCase extends BaseFunctionalTestCase {[m
+ 		if (s == null) {[m
+ 			// 根据配置创建Selenium driver.[m
+ 			String driverName = propertiesLoader.getProperty("selenium.driver");[m
+[31m-[m
+[32m+[m			[32mSystem.out.println("============="+driverName);[m
+ 			WebDriver driver = WebDriverFactory.createDriver(driverName);[m
+ [m
+ 			s = new Selenium2(driver, baseUrl);[m
+[31m-			s.setStopAtShutdown();[m
+[32m+[m			[32m//s.setStopAtShutdown();[m
+ 		}[m
+ 	}[m
+ }[m
+[1mdiff --git a/examples/showcase/src/test/resources/application.functional.properties b/examples/showcase/src/test/resources/application.functional.properties[m
+[1mindex 56d3b1c..8fa3fe6 100644[m
+[1m--- a/examples/showcase/src/test/resources/application.functional.properties[m
+[1m+++ b/examples/showcase/src/test/resources/application.functional.properties[m
+[36m@@ -2,7 +2,7 @@[m [mbaseUrl=http://localhost:8083/showcase[m
+ embeddedForLocal=true[m
+ [m
+ #selenium settings, options include firefox,ie,chrome,remote:localhost:4444:firefox[m
+[31m-selenium.driver=firefox[m
+[32m+[m[32mselenium.driver=ie[m
+ [m
+ #(optional)override jdbc url for functional test[m
+ db.type=h2[m

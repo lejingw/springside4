@@ -33,10 +33,10 @@ public class BaseSeleniumTestCase extends BaseFunctionalTestCase {
 		if (s == null) {
 			// 根据配置创建Selenium driver.
 			String driverName = propertiesLoader.getProperty("selenium.driver");
-
+			//System.out.println("============="+driverName);
 			WebDriver driver = WebDriverFactory.createDriver(driverName);
 
-			s = new Selenium2(driver, baseUrl);
+			//s = new Selenium2(driver, baseUrl);
 			s.setStopAtShutdown();
 		}
 	}
