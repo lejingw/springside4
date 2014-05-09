@@ -36,7 +36,7 @@ public class BaseSeleniumTestCase extends BaseFunctionalTestCase {
 			//System.out.println("============="+driverName);
 			WebDriver driver = WebDriverFactory.createDriver(driverName);
 
-			//s = new Selenium2(driver, baseUrl);
+			s = new Selenium2(driver, baseUrl);
 			s.setStopAtShutdown();
 		}
 	}

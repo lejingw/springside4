@@ -559,6 +559,8 @@
 							<!-- 将由mvn命令行-Dselenium.driver传到surefire的JVM中 -->
 							<systemPropertyVariables>
 								<selenium.driver>${selenium.driver}</selenium.driver>
+								<webdriver.chrome.driver>C:/Program Files (x86)/Google/Chrome/Application/chromedriver.exe</webdriver.chrome.driver>
+								<webdriver.ie.driver>C:/Program Files (x86)/Internet Explorer/IEDriverServer.exe</webdriver.ie.driver>
 							</systemPropertyVariables>
 						</configuration>
 					</plugin>
