@@ -99,8 +99,7 @@
 	<beans profile="functional">
 		<context:property-placeholder ignore-resource-not-found="true"
 			location="classpath*:/application.properties,
-          			  classpath*:/application.functional.properties,
-          			  classpath*:/application.functional-local.properties" />	
+          			  classpath*:/application.functional.properties" />	
 
 		<!-- Tomcat JDBC连接池 -->
 		<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
@@ -133,8 +132,8 @@
 
 		<!-- 初始化数据表结构 与默认数据-->
 		<jdbc:initialize-database data-source="dataSource" ignore-failures="ALL">
-			<jdbc:script location="classpath:sql/h2/schema.sql" />
-			<jdbc:script location="classpath:data/h2/import-data.sql" encoding="UTF-8"/>
+			<jdbc:script location="classpath:sql/${db.type}"/schema.sql" />
+			<jdbc:script location="classpath:data/import-data.sql" encoding="UTF-8"/>
 		</jdbc:initialize-database>
 	</beans>
 </beans>

@@ -18,7 +18,7 @@ import org.springside.modules.test.data.DataFixtures;
 import org.springside.modules.test.jetty.JettyFactory;
 import org.springside.modules.test.spring.Profiles;
 import org.springside.modules.utils.PropertiesLoader;
-
+import static org.assertj.core.api.Assertions.*;
 /**
  * 功能测试基类.
  * 
@@ -35,8 +35,7 @@ public class BaseFunctionalTestCase {
 
 	protected static SimpleDriverDataSource dataSource;
 
-	protected static PropertiesLoader propertiesLoader = new PropertiesLoader("classpath:/application.properties",
-			"classpath:/application.functional.properties", "classpath:/application.functional-local.properties");
+	protected static PropertiesLoader propertiesLoader = new PropertiesLoader("classpath:/application.properties", "classpath:/application.functional.properties");
 
 	private static Logger logger = LoggerFactory.getLogger(BaseFunctionalTestCase.class);
 
@@ -78,6 +77,7 @@ public class BaseFunctionalTestCase {
 	 */
 	protected static void buildDataSourceOnce() throws ClassNotFoundException {
 		if (dataSource == null) {
+			assertThat(propertiesLoader.getProperty("jdbc.driver")).isEqualTo("org.h2.Driver");
 			dataSource = new SimpleDriverDataSource();
 			dataSource.setDriverClass((Class<? extends Driver>) Class.forName(propertiesLoader
 					.getProperty("jdbc.driver")));
@@ -92,7 +92,6 @@ public class BaseFunctionalTestCase {
 	 */
 	protected static void reloadSampleData() throws Exception {
 		String dbType = propertiesLoader.getProperty("db.type", "h2");
-		DataFixtures.executeScript(dataSource, "classpath:data/" + dbType + "/cleanup-data.sql", "classpath:data/"
-				+ dbType + "/import-data.sql");
+		DataFixtures.executeScript(dataSource, "classpath:data/cleanup-data.sql", "classpath:data/import-data.sql");
 	}
 }

@@ -16,6 +16,7 @@
 	<context-param>
 		<param-name>spring.profiles.default</param-name>
 		<param-value>production</param-value>
+		<!-- 在非生产环境，可以用spring.profiles.active代替 -->
 	</context-param>
 
 	<listener>
