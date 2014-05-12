@@ -566,6 +566,11 @@
 						<artifactId>maven-surefire-plugin</artifactId>
 						<configuration>
 							<groups>org.springside.modules.test.category.Smoke</groups>
+							<!-- 
+							<systemPropertyVariables>
+								<spring.profiles.active>production</spring.profiles.active>
+							</systemPropertyVariables>
+							 -->
 						</configuration>
 					</plugin>
 				</plugins>

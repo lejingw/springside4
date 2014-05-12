@@ -85,7 +85,9 @@ public class TaskRestFT extends BaseFunctionalTestCase {
 		restTemplate.delete(createdTaskUri);
 
 		try {
+//			Task task2 = 
 			restTemplate.getForObject(createdTaskUri, Task.class);
+			//assertThat(task2).isNotNull();
 			fail("Get should fail while feth a deleted task");
 		} catch (HttpStatusCodeException e) {
 			assertThat(e.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);

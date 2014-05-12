@@ -78,6 +78,8 @@ public class BaseFunctionalTestCase {
 	protected static void buildDataSourceOnce() throws ClassNotFoundException {
 		if (dataSource == null) {
 			assertThat(propertiesLoader.getProperty("jdbc.driver")).isEqualTo("org.h2.Driver");
+//			assertThat(propertiesLoader.getProperty("jdbc.driver")).isEqualTo("com.mysql.jdbc.Driver");
+			
 			dataSource = new SimpleDriverDataSource();
 			dataSource.setDriverClass((Class<? extends Driver>) Class.forName(propertiesLoader
 					.getProperty("jdbc.driver")));
@@ -91,7 +93,7 @@ public class BaseFunctionalTestCase {
 	 * 载入测试数据.
 	 */
 	protected static void reloadSampleData() throws Exception {
-		String dbType = propertiesLoader.getProperty("db.type", "h2");
+//		String dbType = propertiesLoader.getProperty("db.type", "h2");
 		DataFixtures.executeScript(dataSource, "classpath:data/cleanup-data.sql", "classpath:data/import-data.sql");
 	}
 }

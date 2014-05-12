@@ -567,6 +567,27 @@
 				</plugins>
 			</build>
 		</profile>
+		
+		<!-- 执行@Category(Smoke.class)的TestCase -->
+		<profile>
+			<id>run-smoke</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<groups>org.springside.modules.test.category.Smoke</groups>
+							<!-- 
+							<systemPropertyVariables>
+								<spring.profiles.active>production</spring.profiles.active>
+							</systemPropertyVariables>
+							 -->
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
 		<!-- 执行bdd test -->
 		<profile>
